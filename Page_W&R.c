@@ -12,12 +12,12 @@ int main()
 	u8 s[10];
 	IODIR0|= LEDR|LEDG;
 	I2C_INIT();
-	i2c_eeprom_page_write(SA,0x00,"AKHILESH",8);
+	i2c_eeprom_page_write(SA,0x00,"Arrange",8);
 	i2c_eeprom_seq_read(SA,0x00,s,8);
 	s[8] = '\0';
 	delay_seconds(1);
 	IOCLR0|=LEDG|LEDR;
-	if(strcmp("AKHILESH",(const char*)s)==0)
+	if(strcmp("Arrange",(const char*)s)==0)
 	{
 		IOSET0 = LEDG;
 	}
